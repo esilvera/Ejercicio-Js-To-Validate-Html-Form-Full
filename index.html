@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,96 +13,127 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 </head>
-<body>
-    <form class="d-flex justify-content-center align-item-center">
-    <div class="card m-4" style="width: 800px;">
-        <div class="card-header">
-          <h4>Payment Form Example</h4>
-        </div>
-        <div class="card-body">
-            <div class="row">
-                <div class="col-md-12 ">
-                    <div class="alert alert-danger" role="alert">Some fields are missing</div>
-                </div>
-                <div class="col-md-5">
-                    <label>Card #</label>
-                    <input type="text" id="card" maxlength="16" class="form-control" placeholder="XXXX-XXXX-XXXXX-XXX">
-                    <div id="validationCard" class="invalid-feedback">
-                        Please choose a Number Card.
-                      </div>
-                  </div>
-                  <div class="col-md-4">
-                    <label>CVC #</label>
-                    <input type="text" id="cvc" maxlength="4" class="form-control" placeholder="0000">
-                  </div>
 
-                  <div class="col-md-3">
-                    <label>Amount</label>
-                    <input type="number" id="amount" class="form-control" placeholder="1.0" step="0.01" min="0" max="1000000">
-                  </div>
-                  <div class="row g-3">
-                    <div class="col-md-6">
-                      <label>First Name</label>
-                      <input type="text" id="firstname" class="form-control">
-                    </div>
-                    <div class="col-md-6">
-                      <label>Last Name</label>
-                      <input type="text" id="lastname" class="form-control">
-                    </div>
-                  </div>
-                  <div class="row g-3">
-                    <div class="col-md-6">
-                      <label>City</label>
-                      <input type="text" id="city" class="form-control">
-                    </div>
-                    <div class="col-md-3">
-                      <label>State</label>
-                      <select id="inputState" id="state" class="form-select">
-                        <option selected>Pick a State</option>
-                        <option>...</option>
-                      </select>
-                    </div>
-                    <div class="col-md-3">
-                      <label>Postal Code #</label>
-                      <input type="text" id="postalcode" maxlength="7" class="form-control" placeholder="0000" min="4">
-                    </div>
-            </div>
-            <div class="row g-3">
-                <div class="col-md-6">
-                  <div>
-                    <label>We accept:</label>
-                  </div>
-                    <div class="col-md-5 bg-secondary text-white d-flex justify-center">
-                      <label class="checkvisa" class="form-label">
-                      <input type="radio"><i class="fab fa-cc-visa"></i>
-                      <label class="checkmaster" class="form-label">
-                      <input type="radio"><i class="fab fa-cc-mastercard"></i>
-                      <label class="checkamerican" class="form-label">
-                      <input type="radio"><i class="fab fa-cc-amex"></i>
-                      <label class="diner" class="form-label">
-                      <input type="radio"><i class="fab fa-cc-diners-club"></i>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                  <label>Message:</label>
-                  <textarea class="form-control" rows="2"></textarea>
-                  <p>Add any note here.</p>
-                </div>
-        </div>
-        <div class="card-footer">
-            <div class="modal-footer">
-                <button class="btn btn-secondary"type="reset">Cancel</button>
-                <button class="btn btn-primary" type="submit">Send</button>
-              </div>
-        </div>
+<body>
+  <form class="d-flex justify-content-center align-item-center">
+    <div class="card m-4" style="width: 800px;">
+      <div class="card-header">
+        <h4>Payment Form Example</h4>
       </div>
-    </form>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-12 ">
+            <div id="alerta" hidden class="alert alert-danger" role="alert">Some fields are missing</div>
+          </div>
+          <div class="col-md-5">
+            <label>Card #</label>
+            <input type="text" id="card" maxlength="16" class="form-control" placeholder="XXXXXXXXXXXXXXXX">
+            <div id="validationCard" class="invalid-feedback">
+              Por Favor tipee los 16 números de su tarjeta.
+            </div>
+          </div>
+          <div class="col-md-4">
+            <label>CVC #</label>
+            <input type="text" id="cvc" maxlength="4" class="form-control" placeholder="0000">
+            <div id="validationCVC" class="invalid-feedback">
+              Por Favor tipee los 4 números de seguridad de su tarjeta.
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <label>Amount</label>
+            <input type="number" id="amount" class="form-control" placeholder="0.0" step="0.50" min="1.0" max="1000">
+            <div id="validationAmount" class="invalid-feedback">
+              Por Favor coloque un monto.
+            </div>
+          </div>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label>First Name</label>
+              <input type="text" id="firstname" maxlength="20" class="form-control">
+              <div id="validationAmount" class="invalid-feedback">
+                Por Favor coloque su Nombre.
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label>Last Name</label>
+              <input type="text" id="lastname" maxlength="20" class="form-control">
+              <div id="validationAmount" class="invalid-feedback">
+                Por Favor coloque sus Apellidos.
+              </div>
+            </div>
+          </div>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label>City</label>
+              <input type="text" id="city" class="form-control">
+              <div id="validationAmount" class="invalid-feedback">
+                Por Favor coloque una ciudad.
+              </div>
+            </div>
+            <div class="col-md-3">
+              <label>State</label>
+              <select id="state" class="form-select">
+                <option selected></option>
+                <option>California</option>
+                <option>Florida</option>
+                <option>Indiana</option>
+                <option>Arizona</option>
+              </select>
+              <div id="validationAmount" class="invalid-feedback">
+                Por Favor escoja un estado.
+              </div>
+            </div>
+            <div class="col-md-3">
+              <label>Postal Code #</label>
+              <input type="text" id="postalcode" maxlength="7" class="form-control" placeholder="0000000">
+              <div id="validationAmount" class="invalid-feedback">
+                Por Favor coloque codigo postal.
+              </div>
+            </div>
+          </div>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div>
+                <label>We accept:</label>
+              </div>
+              <div class="col-md-5 bg-secondary text-white d-flex justify-center">
+                <label class="tarjeta">
+                  <input type="radio" id="visa" name="tarjeta" value="tarjeta_visa" checked>
+                  <label for="visa"></label><i class="fab fa-cc-visa"></i>
+                    <input type="radio" id="master" name="tarjeta" value="tarjeta_master">
+                    <label for="master"></label><i class="fab fa-cc-mastercard"></i>
+                      <input type="radio" id="amex" name="tarjeta" value="tarjeta_amex">
+                      <label for="amex>"<i class="fab fa-cc-amex"></i>
+                        <input type="radio" id="dinners" name="tarjeta" value="tarjeta_dinners">
+                        <label for="dinners>"<i class="fab fa-cc-dinners"></i>
+                </label>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="mensaje" class="form-label">Message:</label>
+              <textarea class="form-control" id="mensaje" rows="2"></textarea>
+              <!-- <p>Add any note here.</p> -->
+              <div id="validationmensaje" class="invalid-feedback">
+                Por Favor coloque un mensaje.
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="modal-footer">
+              <button class="btn btn-secondary" type="reset">Cancel</button>
+              <button class="btn btn-primary" type="submit">Send</button>
+            </div>
+          </div>
+        </div>
+  </form>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
     integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp"
     crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"
     integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/"
     crossorigin="anonymous"></script>
-    <script src="./main.js"></script>
+  <script src="./main.js"></script>
 </body>
+
 </html>
